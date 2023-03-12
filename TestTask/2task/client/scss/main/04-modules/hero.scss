@@ -1,0 +1,169 @@
+.hero {
+    position: relative;
+    &-balls {
+        img {
+            width: auto;
+            height: auto;
+            position: absolute;
+        }
+
+        .ball {
+            left: 39%;
+            top: 10%;
+        }
+
+        .midle {
+            right: 38%;
+            top: 0;
+        }
+
+        .small {
+            right: 40%;
+            bottom: 10%;
+        }
+
+        @media #{$sm-device} {
+            display: none;
+        }
+    }
+    &-wrapper {
+        width: 100%;
+        padding-top: calc(var(--header-height) + 90px);
+        padding-bottom: 69px;
+        background-size: cover;
+
+        @media #{$sm-device} {
+			padding-top: 40px;
+            padding-bottom: 59px;
+		}
+
+        @media #{$xs-device} {
+            background: url('../../../public/img/bg-hero-mobile.jpg') center no-repeat;
+            background-size: cover;
+        }
+    }
+
+    &-item {
+        height: 100%;
+    }
+
+    .text-gradient {
+        display: block;
+        color: $light;
+        font-weight: 900;
+        background: $gradien;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .hero-content {
+        .title {
+            font-size: 48px;
+            font-weight: 400;
+            font-family: $font-family-heading;
+            color: $light;
+            line-height: 58px;
+            margin-bottom: 30px;
+
+            @media #{$md-device, $sm-device} {
+                font-size: 36px;
+                line-height: 44px;
+            }
+        }
+
+        .text {
+            font-size: 18px;
+            font-weight: 400;
+            color: $light;
+            font-family: $font-family-base;
+        }
+    }
+
+    .hero-infoblock {
+        text-align: end;
+
+        @media #{$md-device, $sm-device} {
+            text-align: start;
+            margin-top: 45px;
+        }
+
+        .row {
+            row-gap: 30px;
+
+            @media #{$xs-device} {
+                row-gap: 14px;
+            }
+        }
+
+        .title {
+            font-family: $font-family-heading;
+            font-size: 18px;
+            font-weight: 500;
+            color: $light;
+            margin-bottom: 40px;
+            line-height: 22px;
+
+            @media #{$sm-device} {
+                margin-bottom: 20px;
+            }
+
+            span {
+                text-transform: uppercase;
+                display: inline-block;
+                font-weight: 700;
+            }
+        }
+
+        .title-info {
+            font-size: 18px;
+            font-weight: 500;
+            font-family: $font-family-heading;
+            text-transform: uppercase;
+            color: $light;
+            margin-bottom: 6px;
+            line-height: 22px;
+
+            @media #{$xs-device} {
+                font-size: 13px;
+                font-weight: 400;
+                line-height: 16px;
+                padding-left: 15px;
+                position: relative;
+
+                &::before {
+                    content: '';
+                    width: 10px;
+                    height: 1px;
+                    background: linear-gradient(rgba(252, 176, 69, 1), rgba(253, 29, 29, 1));
+                    left: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    position: absolute;
+                }
+            }
+        }
+
+        .text {
+            font-size: 16px;
+            font-weight: 400;
+            color: $light;
+            line-height: 20px;
+            font-family: $font-family-base;
+            width: 135px;
+            margin-left: auto;
+
+            @media #{$md-device, $sm-device} {
+                width: auto;
+                margin-left: 0;
+            }
+
+            @media #{$xs-device} {
+                display: none;
+            }
+        }
+
+        .btn {
+            margin-top: 61px;
+        }
+    }
+}

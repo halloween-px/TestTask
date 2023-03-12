@@ -1,0 +1,29 @@
+.pagination {
+	.page-item {
+		border: 1px solid $border-color;
+		background-color: $light;
+		border-radius: $border-radius;
+
+		&.active, &:hover, &:focus {
+			.page-link {
+				color: $color-theme;
+			}
+		}
+
+		&.disabled .page-link {
+			color: rgba(0, 0, 0, .4);
+		}
+
+		.page-link {
+			font-family: $font-family-heading;
+			font-size: 18px;
+			background-color: transparent;
+			color: $color-text;
+			border-color: transparent;
+
+			&:focus {
+				box-shadow: none;
+			}
+		}
+	}
+}

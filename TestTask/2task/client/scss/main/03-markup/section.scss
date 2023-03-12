@@ -1,0 +1,162 @@
+.section {
+	position: relative;
+	z-index: 1;
+
+	&-padding {
+		padding-top: map-get($section-padding-default, top);
+		padding-bottom: map-get($section-padding-default, bottom);
+
+		@media #{$lg-device} {
+			padding-top: map-get($section-padding-default--lg, top);
+			padding-bottom: map-get($section-padding-default--lg, bottom);
+		}
+
+		@media #{$md-device} {
+			padding-top: map-get($section-padding-default--md, top);
+			padding-bottom: map-get($section-padding-default--md, bottom);
+		}
+
+		@media #{$sm-device} {
+			padding-top: map-get($section-padding-default--sm, top);
+			padding-bottom: map-get($section-padding-default--sm, bottom);
+		}
+	}
+
+	&-title {
+		@include flex();
+		margin-bottom: $section-title-margin;
+		color: rgba($light, 1);
+		position: relative;
+		margin-bottom: 100px;
+
+		.otherTitle {
+			@include font-prop(22px, 600, $light );
+			position: relative;
+
+			&:after {
+				content: '';
+				position: absolute;
+				left: 0;
+				bottom: -14px;
+				background-color: $color-theme;
+				width: 90px;
+				height: 2px;
+			}
+		}
+
+		.bgTitle-area {
+			position: absolute;
+			display: flex;
+			left: -24px;
+			top: 50%;
+			transform: translateY(-60%);
+
+			.bgTitle {
+				display: inline-block;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				font-size: calc(16px + 10vw);
+				color: rgba($light, .01);
+				text-transform: uppercase;
+				line-height: 0.9;
+
+				&:first-child {
+					margin-right: 60px;
+				}
+			}
+		}
+
+		// titles
+		&--wrapper {
+			margin-left: 100px;
+			* {
+				margin: 0;
+			}
+
+			.subtitle {
+				font-size: 18px;
+			}
+
+			.title {
+				font-size: 65px;
+				font-weight: 800;
+				line-height: 1.2;
+				margin-bottom: 12px;
+				position: relative;
+
+				.first{
+					color: $color-theme;
+				}
+
+				&::after, &::before {
+					content: '';
+					width: 50px;
+					height: 4px;
+					background-color: $color-theme;
+					top: 48px;
+					position: absolute;
+				}
+
+				&::after {
+					left: -62px;
+				}
+
+				&::before {
+					right: -62px;
+				}
+			}
+
+			.text {
+				@include font-prop(map-get($section-title-text, fs), map-get($section-title-text, fw), null);
+			}
+		}
+
+		// positions
+		&--center {
+			justify-content: center;
+			text-align: center;
+		}
+
+		&--left {
+			justify-content: flex-start;
+			text-align: left;
+		}
+
+		&--right {
+			justify-content: flex-end;
+			text-align: right;
+		}
+
+		// colors
+		&--white {
+			.title {
+				color: #ffffff;
+			}
+		}
+	}
+
+	&-bg {
+		&--grey {
+			background-color: #ebf1f4;
+		}
+
+		&--theme {
+			background-color: $color-theme;
+		}
+
+		&--second {
+			background-color: $color-second;
+		}
+	}
+
+	&-position {
+		&--absolute {
+			position: absolute !important;
+		}
+
+		&--static {
+			position: static !important;
+		}
+	}
+}

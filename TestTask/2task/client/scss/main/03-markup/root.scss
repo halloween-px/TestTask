@@ -1,0 +1,7 @@
+:root {
+    --header-height: 73px;
+
+    @media #{$sm-device} {
+        --header-height: 55px;
+    }
+}
